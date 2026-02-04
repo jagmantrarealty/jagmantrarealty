@@ -55,7 +55,7 @@
         <h2>Get Free Site Visit & Price Sheet</h2>
         <p>Fill details and we will call you within 10 minutes.</p>
         <!-- Replace the action URL with your Google Form or backend endpoint -->
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSe2f2gzzJjuQ27aCQjnaQURYT3TL_znXNoAzu_Of9me5_U4zQ/formResponse" method="POST" target="_blank">
+        <form id="leadForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe2f2gzzJjuQ27aCQjnaQURYT3TL_znXNoAzu_Of9me5_U4zQ/formResponse" method="POST" target="hidden_iframe">
           <input type="text" name="entry.539725510" placeholder="Your Name" required />
           <input type="tel" name="entry.229248192" placeholder="Mobile Number" required />
           <select name="entry.2050160607" required>
@@ -77,8 +77,20 @@
             <option>95-1cr</option>
             <option>above 1cr</option>
           </select>
-          <button type="submit">Get Details Now</button>
+          <button type="submit">Get Free Site Visit on WhatsApp</button>
         </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <div id="thankyou" style="display:none; margin-top:20px; font-weight:bold; color:#16a34a;">Thank you! Redirecting you to WhatsApp…</div>
+        <script>
+          const form = document.getElementById('leadForm');
+          const thankyou = document.getElementById('thankyou');
+          form.addEventListener('submit', function() {
+            thankyou.style.display = 'block';
+            setTimeout(function() {
+              window.location.href = 'https://wa.me/918208081907?text=Hi%20I%20submitted%20a%20property%20enquiry%20from%20Jagmantra%20Realty%20website';
+            }, 1500);
+          });
+        </script>
       </div>
     </section>
   </div>
