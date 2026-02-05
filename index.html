@@ -27,19 +27,20 @@
     .stat h3 { color:#facc15; font-size:30px; margin:0; }
     .stat p { color:#cbd5e1; font-weight:600; margin-top:6px; }
 
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; margin-top:40px; }
-    .card { background:#1e293b; border-radius:24px; padding:26px; box-shadow:0 20px 50px rgba(0,0,0,.6); transition:transform .3s ease, box-shadow .3s ease; cursor:pointer; }
-    .card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 30px 70px rgba(0,0,0,.7); }
+    .about-section { background:#111827; padding:50px 20px; border-radius:20px; margin:50px 0; }
+    .about-section h2 { color:#facc15; text-align:center; margin-bottom:20px; }
+    .about-section p { color:#cbd5e1; max-width:800px; margin:auto; font-size:16px; line-height:1.6; text-align:center; }
 
-    .slider { position: relative; overflow: hidden; border-radius:16px; }
-    .slide { display:none; width:100%; border-radius:16px; transition: transform .5s ease-in-out; }
-    .slide.active { display:block; }
+    .project-slider { position: relative; max-width: 100%; overflow: hidden; border-radius:20px; margin:50px 0; }
+    .slides { display:flex; transition: transform 0.5s ease-in-out; }
+    .slide { min-width: 100%; box-sizing: border-box; border-radius:16px; position:relative; cursor:pointer; }
+    .slide img { width:100%; border-radius:16px; display:block; transition: transform .5s; }
+    .slide:hover img { transform:scale(1.05); }
+    .slide h3 { position:absolute; bottom:50px; left:20px; color:#facc15; font-size:24px; background:rgba(0,0,0,0.6); padding:10px 16px; border-radius:12px; }
 
-    .badge { display:inline-block; background:#fbbf24; color:#111827; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:800; margin-right:6px; }
-    .amenities { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; font-size:14px; color:#e5e7eb; margin-top:10px; }
-    .amenities span { background:#334155; padding:6px 12px; border-radius:12px; font-weight:600; }
-    .project-cta {margin-top:14px;display:block;text-align:center;background:#facc15;color:#111827;padding:14px 20px;border-radius:14px;font-weight:800;text-decoration:none; transition: transform .3s; }
-    .project-cta:hover { transform:scale(1.05); }
+    .amenities { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:10px; }
+    .amenity { background:#334155; padding:8px 14px; border-radius:12px; font-weight:600; transition: transform .3s, background .3s; cursor:pointer; }
+    .amenity:hover { transform:scale(1.1); background:#facc15; color:#111827; }
 
     .form-wrap { background:#1e293b; border-radius:28px; padding:40px; box-shadow:0 22px 55px rgba(0,0,0,.5); max-width:520px; margin:50px auto; }
     form input, form select { width:100%; padding:16px; margin:12px 0; border-radius:14px; border:none; font-size:16px; }
@@ -49,20 +50,6 @@
     footer { text-align:center; padding:40px; font-size:14px; color:#cbd5e1; }
     .whatsapp { position:fixed; bottom:22px; right:22px; background:#25D366; color:#111827; padding:16px 24px; border-radius:999px; font-weight:900; text-decoration:none; box-shadow:0 12px 30px rgba(37,211,102,.5); transition: transform .3s; }
     .whatsapp:hover { transform:scale(1.1); }
-
-    .tabs { display:flex; justify-content:center; margin-bottom:30px; gap:20px; flex-wrap:wrap; }
-    .tab-btn { background:#334155; color:#facc15; padding:10px 16px; border-radius:12px; cursor:pointer; font-weight:700; transition: transform .3s; }
-    .tab-btn:hover { transform:scale(1.05); }
-    .tab-btn.active { background:#facc15; color:#111827; }
-    .tab-content { display:none; }
-    .tab-content.active { display:block; }
-
-    .about-section { background:#111827; padding:50px 20px; border-radius:20px; margin:50px 0; }
-    .about-section h2 { color:#facc15; text-align:center; margin-bottom:20px; }
-    .about-section p { color:#cbd5e1; max-width:800px; margin:auto; font-size:16px; line-height:1.6; text-align:center; }
-
-    .map-section { margin:50px 0; text-align:center; }
-    .map-section iframe { border-radius:20px; width:100%; max-width:1000px; height:450px; border:0; }
   </style>
 </head>
 <body>
@@ -87,12 +74,22 @@
 
     <div class="about-section">
       <h2>About Us</h2>
-      <p>Jagmantra Prime Realty is Pune’s leading channel partner, dedicated to connecting home buyers with premium, RERA-approved high-rise projects. With years of experience and deep market knowledge, we ensure a smooth and trustworthy property journey for every client.</p>
+      <p>Jagmantra Prime Realty is Pune’s leading channel partner, connecting home buyers with premium, RERA-approved high-rise projects. Our expertise ensures a smooth, trustworthy property journey.</p>
       <h2>Our Vision</h2>
-      <p>Our vision is to redefine luxury living in Pune by providing transparent, convenient, and personalized property solutions, helping families find not just a home, but a lifestyle they dream of.</p>
+      <p>To redefine luxury living in Pune by offering transparent, convenient, and personalized property solutions, helping families find not just a home, but a lifestyle they dream of.</p>
     </div>
 
-    <!-- Lead Form with Name, Number, Preferred Location & Budget -->
+    <!-- Interactive Project Slider with Amenity Highlights -->
+    <div class="project-slider" id="projectSlider">
+      <div class="slides">
+        <div class="slide" data-amenities="Pool,Gym,Clubhouse,Jogging Track"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02c8" alt="Lodha Group Premium Towers"><h3>Lodha Group - Wakad</h3></div>
+        <div class="slide" data-amenities="Pool,Gym,Community Hall,Yoga Center"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Godrej Properties Luxury Towers"><h3>Godrej Properties - Baner</h3></div>
+        <div class="slide" data-amenities="Gym,Clubhouse,Kids Play Area,Creche"><img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b" alt="VTP Realty Smart Homes"><h3>VTP Realty - Tathwade</h3></div>
+      </div>
+      <div class="amenities" id="amenitiesDisplay"></div>
+    </div>
+
+    <!-- Lead Form -->
     <section id="lead">
       <div class="form-wrap">
         <h2>Get Free Site Visit & Price Sheet</h2>
@@ -124,7 +121,6 @@
         <iframe name="hidden_iframe" style="display:none;"></iframe>
       </div>
     </section>
-
   </div>
 
   <a class="whatsapp" href="https://wa.me/918208081907" target="_blank">WhatsApp Now</a>
@@ -149,6 +145,28 @@
       };
       updateCount();
     });
+
+    // Project Slider Auto-Slide with Amenities Display
+    const slides = document.querySelectorAll('.slide');
+    const amenitiesDisplay = document.getElementById('amenitiesDisplay');
+    let currentIndex = 0;
+
+    function showSlide(index){
+      slides.forEach((slide,i)=> slide.style.display = i===index?'block':'none');
+      const amenities = slides[index].dataset.amenities.split(',');
+      amenitiesDisplay.innerHTML = '';
+      amenities.forEach(a => {
+        const span = document.createElement('span');
+        span.className='amenity';
+        span.textContent = a;
+        amenitiesDisplay.appendChild(span);
+      });
+    }
+    showSlide(currentIndex);
+    setInterval(()=>{
+      currentIndex = (currentIndex+1)%slides.length;
+      showSlide(currentIndex);
+    },4000);
   </script>
 </body>
 </html>
