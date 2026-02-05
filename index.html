@@ -53,9 +53,9 @@
     <section style="margin-top:40px;">
       <h2 style="text-align:center;">Our Developer Projects</h2>
       <div class="grid">
-        <div class="card"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02c8" style="width:100%;border-radius:10px;"/><h3>Premium 2 & 3 BHK</h3><p>Wakad • Near Hinjewadi IT Park</p></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" style="width:100%;border-radius:10px;"/><h3>Luxury Living</h3><p>Baner • High-rise towers</p></div>
-        <div class="card"><img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b" style="width:100%;border-radius:10px;"/><h3>Smart Homes</h3><p>Tathwade • Budget-friendly</p></div>
+        <div class="card"><span class="badge">New Launch</span><span class="badge">Only 2 Units Left</span><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02c8" style="width:100%;border-radius:10px;"/><h3>Lodha Group – Premium 2 & 3 BHK</h3><p>Wakad • Near Hinjewadi IT Park</p></div>
+        <div class="card"><span class="badge">Possession Soon</span><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" style="width:100%;border-radius:10px;"/><h3>Godrej Properties – Luxury Towers</h3><p>Baner • High-rise living</p></div>
+        <div class="card"><span class="badge">Best Value</span><img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b" style="width:100%;border-radius:10px;"/><h3>VTP Realty – Smart Homes</h3><p>Tathwade • Budget-friendly</p></div>
       </div>
     </section>
 
@@ -69,15 +69,15 @@
           <input type="tel" name="entry.229248192" placeholder="Mobile Number" required />
           <select name="entry.2050160607" required>
             <option value="">Preferred Location</option>
-            <option>Bhavdan</option>
-            <option>Baner</option>
-            <option>Balewadi</option>
-            <option>Wakad</option>
-            <option>Pimple saudagar</option>
-            <option>Tathwade</option>
-            <option>Punawale</option>
-            <option>Ravet</option>
-            <option>Kiwle</option>
+            <option>bhavdan</option>
+            <option>baner</option>
+            <option>balewadi</option>
+            <option>wakad</option>
+            <option>pimple saudagar</option>
+            <option>tathwade</option>
+            <option>punawale</option>
+            <option>ravet</option>
+            <option>kiwle</option>
           </select>
           <select name="entry.1831279211" required>
             <option value="">Budget Range</option>
@@ -97,7 +97,10 @@
           form.addEventListener('submit', function() {
             thankyou.style.display = 'block';
             setTimeout(function() {
-              window.location.href = 'https://wa.me/918208081907?text=Hi%20I%20submitted%20a%20property%20enquiry%20with%20Jagmantra%20Realty.%20Please%20share%20available%20projects%20details%20and%20brochure.';
+              const location = form.querySelector('select[name="entry.2050160607"]').value;
+              const budget = form.querySelector('select[name="entry.1831279211"]').value;
+              const message = `Hi, I submitted a property enquiry with Jagmantra Realty. I am interested in ${location} location with budget ${budget}. Please share available projects details and brochure.`;
+              window.location.href = 'https://wa.me/918208081907?text=' + encodeURIComponent(message);
             }, 1500);
           });
         </script>
