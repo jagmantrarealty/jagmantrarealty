@@ -31,9 +31,9 @@
     .card { background:#1e293b; border-radius:24px; padding:26px; box-shadow:0 20px 50px rgba(0,0,0,.6); transition:transform .3s ease, box-shadow .3s ease; cursor:pointer; }
     .card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 30px 70px rgba(0,0,0,.7); }
 
-    .slider img { width:100%; border-radius:16px; margin-bottom:12px; }
-    .slide{display:none;}
-    .slide.active{display:block;}
+    .slider { position: relative; overflow: hidden; border-radius:16px; }
+    .slide { display:none; width:100%; }
+    .slide.active { display:block; }
 
     .badge { display:inline-block; background:#fbbf24; color:#111827; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:800; margin-right:6px; }
     .amenities { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; font-size:14px; color:#e5e7eb; margin-top:10px; }
@@ -92,7 +92,32 @@
       <p>Our vision is to redefine luxury living in Pune by providing transparent, convenient, and personalized property solutions, helping families find not just a home, but a lifestyle they dream of.</p>
     </div>
 
-    <!-- Tabs, Project Cards, Map Section, Lead Form remain -->
+    <!-- Tabs and Project Cards with auto sliders -->
+    <div class="tabs">
+      <div class="tab-btn active" data-tab="Wakad">Wakad</div>
+      <div class="tab-btn" data-tab="Baner">Baner</div>
+      <div class="tab-btn" data-tab="Ravet">Ravet</div>
+    </div>
+
+    <div class="tab-content active" id="Wakad">
+      <div class="grid">
+        <div class="card">
+          <div class="slider">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00" class="slide active" />
+            <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" class="slide" />
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2" class="slide" />
+          </div>
+          <span class="badge">High-Rise Tower</span>
+          <div class="amenities">
+            <span>🏊 Infinity Pool</span>
+            <span>🏋️ Clubhouse & Gym</span>
+          </div>
+          <a href="#lead" class="project-cta">Book High-Rise Site Visit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map, Lead Form, Footer remain the same -->
 
   </div>
 
@@ -129,6 +154,18 @@
         btn.classList.add('active');
         document.getElementById(btn.dataset.tab).classList.add('active');
       });
+    });
+
+    // Auto-slider for project images
+    const sliders = document.querySelectorAll('.slider');
+    sliders.forEach(slider => {
+      let index = 0;
+      const slides = slider.querySelectorAll('.slide');
+      setInterval(() => {
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+      }, 3000);
     });
   </script>
 </body>
