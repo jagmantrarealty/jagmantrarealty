@@ -8,51 +8,26 @@
   <style>
     body { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; margin: 0; background:linear-gradient(180deg,#f8fafc,#eef2ff); color:#0f172a; }
     .container { max-width: 1200px; margin: auto; padding: 24px; }
-    header {
-      background: linear-gradient(135deg, #1e3a8a, #2563eb);
-      color: #fff; padding: 70px 20px; text-align: center;
-    }
-    header h1 { margin: 0 0 12px; font-size: 38px; font-weight:800; }
+    header { background: linear-gradient(135deg, #0f172a, #1e3a8a); color: #fff; padding: 80px 20px; text-align: center; }
+    header h1 { margin: 0 0 12px; font-size: 42px; font-weight:900; }
     header p { font-size: 20px; opacity: 0.95; }
-    .cta-btn {
-      background:#22c55e; color:#052e16; padding:16px 28px;
-      border-radius:999px; text-decoration:none; display:inline-block;
-      margin-top:22px; font-weight:800; font-size:16px;
-      box-shadow:0 10px 25px rgba(34,197,94,.35);
-    }
-    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-top:-40px; }
-    .stat { background:#fff; border-radius:18px; padding:22px; text-align:center; box-shadow:0 12px 30px rgba(0,0,0,.08); }
-    .stat h3 { margin:0; font-size:28px; color:#2563eb; }
+    .cta-btn { background:#22c55e; color:#052e16; padding:16px 32px; border-radius:999px; text-decoration:none; display:inline-block; margin-top:26px; font-weight:900; font-size:17px; box-shadow:0 10px 30px rgba(34,197,94,.45); }
+    .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:18px; margin-top:-50px; }
+    .stat { background:#fff; border-radius:20px; padding:26px; text-align:center; box-shadow:0 14px 35px rgba(0,0,0,.1); }
+    .stat h3 { margin:0; font-size:30px; color:#2563eb; }
     .stat p { margin:6px 0 0; font-weight:600; color:#475569; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:24px; margin-top:36px; }
-    .card {
-      background:#fff; border-radius:20px; padding:22px;
-      box-shadow:0 15px 35px rgba(0,0,0,0.08);
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .card:hover { transform:translateY(-6px); box-shadow:0 20px 45px rgba(0,0,0,.12); }
-    .card img { width:100%; border-radius:14px; margin-bottom:12px; }
-    .badge { display:inline-block; background:#e0e7ff; color:#1e3a8a; padding:6px 12px; border-radius:999px; font-size:12px; font-weight:700; margin-right:6px; }
-    .form-wrap {
-      background:#fff; border-radius:26px; padding:34px;
-      box-shadow:0 20px 50px rgba(0,0,0,.15);
-      max-width:520px; margin:40px auto 0;
-    }
-    form input, form select {
-      width:100%; padding:14px; margin:12px 0;
-      border-radius:12px; border:1px solid #e2e8f0; font-size:15px;
-    }
-    form button {
-      width:100%; padding:16px; background:linear-gradient(135deg,#22c55e,#16a34a);
-      color:#052e16; border:none; border-radius:14px; font-size:17px;
-      font-weight:900; cursor:pointer; box-shadow:0 10px 25px rgba(34,197,94,.4);
-    }
-    footer { text-align:center; padding:36px; font-size:14px; color:#64748b; }
-    .whatsapp {
-      position: fixed; bottom: 22px; right: 22px; background:#25D366;
-      color:#052e16; padding:16px 22px; border-radius:999px;
-      text-decoration:none; font-weight:900; box-shadow:0 10px 25px rgba(37,211,102,.45);
-    }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:26px; margin-top:40px; }
+    .card { background:#fff; border-radius:22px; padding:24px; box-shadow:0 18px 45px rgba(0,0,0,0.12); transition:transform .25s ease, box-shadow .25s ease; }
+    .card:hover { transform:translateY(-8px); box-shadow:0 26px 60px rgba(0,0,0,.18); }
+    .slider img { width:100%; border-radius:16px; margin-bottom:12px; }
+    .badge { display:inline-block; background:#e0e7ff; color:#1e3a8a; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:800; margin-right:6px; }
+    .amenities { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; font-size:14px; color:#475569; margin-top:10px; }
+    .amenities span { background:#f1f5f9; padding:6px 10px; border-radius:10px; font-weight:600; }
+    .form-wrap { background:#fff; border-radius:28px; padding:36px; box-shadow:0 22px 55px rgba(0,0,0,.18); max-width:520px; margin:50px auto 0; }
+    form input, form select { width:100%; padding:15px; margin:12px 0; border-radius:14px; border:1px solid #e2e8f0; font-size:15px; }
+    form button { width:100%; padding:18px; background:linear-gradient(135deg,#22c55e,#16a34a); color:#052e16; border:none; border-radius:16px; font-size:18px; font-weight:900; cursor:pointer; box-shadow:0 12px 30px rgba(34,197,94,.45); }
+    footer { text-align:center; padding:40px; font-size:14px; color:#64748b; }
+    .whatsapp { position: fixed; bottom: 22px; right: 22px; background:#25D366; color:#052e16; padding:16px 24px; border-radius:999px; text-decoration:none; font-weight:900; box-shadow:0 12px 30px rgba(37,211,102,.5); }
   </style>
 </head>
 <body>
@@ -94,24 +69,29 @@
       <h2 style="text-align:center;">High-Rise Towers with World-Class Amenities</h2>
       <p style="text-align:center;color:#475569;max-width:720px;margin:10px auto 30px;">Experience premium high-rise living with skyline views, luxury amenities, and secure gated communities by Pune’s top developers.</p>
       <div class="grid">
-        <div class="card"><span class="badge">High-Rise Tower</span><span class="badge">Skyline View</span><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02c8" style="width:100%;border-radius:10px;"/><h3>Lodha Group – Luxury High-Rise Towers</h3><ul style="padding-left:18px;color:#475569;font-size:14px;">
-        <li>Infinity Swimming Pool</li>
-        <li>Sky Lounge & Rooftop Garden</li>
-        <li>Clubhouse & Gym</li>
-        <li>Kids Play Area</li>
-      </ul><p>Wakad • Near Hinjewadi IT Park</p></div>
-        <div class="card"><span class="badge">High-Rise Living</span><span class="badge">Gated Society</span><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" style="width:100%;border-radius:10px;"/><h3>Godrej Properties – Iconic High-Rise Living</h3><ul style="padding-left:18px;color:#475569;font-size:14px;">
-        <li>Grand Clubhouse</li>
-        <li>Swimming Pool & Jogging Track</li>
-        <li>24x7 Security</li>
-        <li>Landscaped Podium</li>
-      </ul><p>Baner • High-rise living</p></div>
-        <div class="card"><span class="badge">Smart High-Rise</span><span class="badge">Family Society</span><img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b" style="width:100%;border-radius:10px;"/><h3>VTP Realty – Modern High-Rise Society</h3><ul style="padding-left:18px;color:#475569;font-size:14px;">
-        <li>Podium Amenities</li>
-        <li>Indoor Games & Multipurpose Hall</li>
-        <li>Amphitheatre</li>
-        <li>Senior Citizen Area</li>
-      </ul><p>Tathwade • Budget-friendly</p></div>
+        <div class="card">
+          <div class="slider">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00" />
+            <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471" />
+          </div>
+          <span class="badge">High-Rise Tower</span><span class="badge">Skyline View</span><span class="badge">Skyline View</span><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02c8" style="width:100%;border-radius:10px;"/><h3>Lodha Group – Luxury High-Rise Towers</h3><div class="amenities">
+            <span>🏊 Infinity Pool</span>
+            <span>🏋️ Clubhouse & Gym</span>
+            <span>🌇 Sky Lounge</span>
+            <span>🛝 Kids Play Area</span>
+          </div><p>Wakad • Near Hinjewadi IT Park</p></div>
+        <div class="card"><span class="badge">High-Rise Living</span><span class="badge">Gated Society</span><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" style="width:100%;border-radius:10px;"/><h3>Godrej Properties – Iconic High-Rise Living</h3><div class="amenities">
+            <span>🏊 Infinity Pool</span>
+            <span>🏋️ Clubhouse & Gym</span>
+            <span>🌇 Sky Lounge</span>
+            <span>🛝 Kids Play Area</span>
+          </div><p>Baner • High-rise living</p></div>
+        <div class="card"><span class="badge">Smart High-Rise</span><span class="badge">Family Society</span><img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b" style="width:100%;border-radius:10px;"/><h3>VTP Realty – Modern High-Rise Society</h3><div class="amenities">
+            <span>🏊 Infinity Pool</span>
+            <span>🏋️ Clubhouse & Gym</span>
+            <span>🌇 Sky Lounge</span>
+            <span>🛝 Kids Play Area</span>
+          </div><p>Tathwade • Budget-friendly</p></div>
       </div>
     </section>
 
