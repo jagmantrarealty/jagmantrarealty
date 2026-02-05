@@ -32,7 +32,7 @@
     .card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 30px 70px rgba(0,0,0,.7); }
 
     .slider { position: relative; overflow: hidden; border-radius:16px; }
-    .slide { display:none; width:100%; }
+    .slide { display:none; width:100%; border-radius:16px; transition: transform .5s ease-in-out; }
     .slide.active { display:block; }
 
     .badge { display:inline-block; background:#fbbf24; color:#111827; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:800; margin-right:6px; }
@@ -92,7 +92,7 @@
       <p>Our vision is to redefine luxury living in Pune by providing transparent, convenient, and personalized property solutions, helping families find not just a home, but a lifestyle they dream of.</p>
     </div>
 
-    <!-- Lead Form -->
+    <!-- Lead Form with Name, Number, Preferred Location & Budget -->
     <section id="lead">
       <div class="form-wrap">
         <h2>Get Free Site Visit & Price Sheet</h2>
