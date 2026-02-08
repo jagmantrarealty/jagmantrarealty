@@ -130,35 +130,55 @@
     <section id="lead">
       <div class="form-wrap">
         <h2>Get Free Site Visit & Price Sheet</h2>
-        <p>Fill in your details below and we will contact you within 10 minutes.</p>
-        <form id="leadForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe2f2gzzJjuQ27aCQjnaQURYT3TL_znXNoAzu_Of9me5_U4zQ/formResponse" method="POST" target="hidden_iframe">
-          <input type="text" name="entry.539725510" placeholder="Your Name" required />
-          <input type="tel" name="entry.229248192" placeholder="Mobile Number" required />
+        <p>Submit details & get instant WhatsApp response</p>
+
+        <form id="leadForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe2f2gzzJjuQ27aCQjnaQURYT3TL_znXNoAzu_Of9me5_U4zQ/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          onsubmit="handleSubmit();">
+
+          <input type="text" name="entry.539725510" placeholder="Your Name" required>
+          <input type="tel" name="entry.229248192" placeholder="Mobile Number" required>
+
           <select name="entry.2050160607" required>
             <option value="">Preferred Location</option>
-            <option>Bhavdan</option>
+            <option>Wakad</option>
             <option>Baner</option>
             <option>Balewadi</option>
-            <option>Wakad</option>
-            <option>Pimple Saudagar</option>
             <option>Tathwade</option>
             <option>Punawale</option>
-            <option>Ravet</option>
-            <option>Kiwle</option>
           </select>
+
           <select name="entry.1831279211" required>
             <option value="">Budget Range</option>
-            <option>55-65L</option>
-            <option>75-85L</option>
-            <option>95L-1Cr</option>
-            <option>Above 1Cr</option>
+            <option>55–65 L</option>
+            <option>75–85 L</option>
+            <option>95 L – 1 Cr</option>
+            <option>Above 1 Cr</option>
           </select>
-          <button type="submit">Get Free Site Visit on WhatsApp</button>
-        </form>
-        <iframe name="hidden_iframe" style="display:none;"></iframe>
-      </div>
-    </section>
-  </div>
+
+         <button type="submit">Get Details on WhatsApp</button>
+       </form>
+
+       <iframe name="hidden_iframe" style="display:none;"></iframe>
+       <div id="thankyou" style="display:none;color:#22c55e;font-weight:700;margin-top:15px;">
+         Thank you! Redirecting to WhatsApp…
+       </div>
+     </div>
+   </section>
+
+<script>
+function handleSubmit(){
+  document.getElementById('thankyou').style.display = 'block';
+  setTimeout(()=>{
+    window.location.href =
+      "https://wa.me/918208081907?text=" +
+      encodeURIComponent("Hi, I submitted a property enquiry with Jagmantra Realty. Please share available projects & price sheet.");
+  },1500);
+}
+</script>
+
 
   <a class="whatsapp" href="https://wa.me/918208081907" target="_blank">WhatsApp Now</a>
 
